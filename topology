@@ -1,0 +1,30 @@
+#
+#                                         147.210.0.1/24
+#                                         172.110.0.1/24
+#                                         192.168.0.1/16
+#                                               
+#                                 Bob--[s1]--router--[s2]--Alice
+#                             147.210.0.2/24    |        172.110.0.2/24
+#                                             [s3]    
+#                                               |
+#                                             Oscar
+#                               
+# 
+
+# switches
+# SWITCH name
+
+SWITCH s1
+SWITCH s2
+SWITCH s3
+
+# hosts
+#
+# HOST arch name nic0 nic1 ...
+#
+
+HOST debian-AR Bob s1 
+HOST debian-AR Alice s2       
+HOST debian-AR router s1 s2 s3
+HOST debian-AR oscar s3
+
